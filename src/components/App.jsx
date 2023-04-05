@@ -11,9 +11,13 @@ import {
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
+// import { useGetContactsQuery } from 'services/contactsApi';
 
 export default function App() {
   const contactsItems = useSelector(getContactsItems);
+
+  // const { data, error, isLoading } = useGetContactsQuery();
+  // console.log(data);
 
   return (
     <Container>
