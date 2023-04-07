@@ -6,7 +6,7 @@ export const ListItem = styled.li`
   justify-content: space-between;
 
   padding: 6px 16px;
-  border: 1px solid #d4d4d4;
+  border: 1px solid #dfdddd;
   border-radius: 4px;
 
   margin-bottom: 4px;
@@ -33,7 +33,7 @@ export const ContactItemPhone = styled.div`
   display: flex;
   align-items: center;
 
-  font-size: 18px;
+  font-size: 16px;
   color: #acaaaa;
 `;
 

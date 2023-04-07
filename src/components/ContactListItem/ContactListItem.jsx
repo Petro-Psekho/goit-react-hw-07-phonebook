@@ -29,7 +29,7 @@ export const ContactListItem = ({ id, name, number }) => {
         <ContactItem>
           <ContactItemName>{name}</ContactItemName>
           <ContactItemPhone>
-            <FaPhoneAlt size={14} color={'#c4c4c4'} />
+            <FaPhoneAlt size={12} color={'#c4c4c4'} />
             <ContactItemNumber>{number}</ContactItemNumber>
           </ContactItemPhone>
         </ContactItem>
