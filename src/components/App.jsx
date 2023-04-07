@@ -1,6 +1,19 @@
-import { useSelector } from 'react-redux';
-import { getContactsItems } from 'redux/contactsSlice';
-import { Toaster } from 'react-hot-toast';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { Toaster, toast } from 'react-hot-toast';
+
+import {
+  selectContactsItems,
+  selectIsLoading,
+  selectError,
+} from 'redux/contacts/selectors';
+
+import { fetchContacts } from 'redux/contacts/operations';
+
+import { ContactForm } from 'components/ContactForm/ContactForm';
+import { ContactList } from 'components/ContactList/ContactList';
+import { Filter } from 'components/Filter/Filter';
 
 import {
   Container,
@@ -8,16 +21,27 @@ import {
   ContactsTitle,
   FindContactsTitle,
 } from 'components/App.styled';
-import { ContactForm } from 'components/ContactForm/ContactForm';
-import { ContactList } from 'components/ContactList/ContactList';
-import { Filter } from 'components/Filter/Filter';
-// import { useGetContactsQuery } from 'services/contactsApi';
 
 export default function App() {
-  const contactsItems = useSelector(getContactsItems);
+  const contactsItems = useSelector(selectContactsItems);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
 
-  // const { data, error, isLoading } = useGetContactsQuery();
-  // console.log(data);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (error === 'ERR_BAD_REQUEST') {
+      toast.error('There are some problems! Try again later.');
+      return;
+    }
+    if (error) {
+      toast.error(error);
+    }
+  }, [error]);
 
   return (
     <Container>

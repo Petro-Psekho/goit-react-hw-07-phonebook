@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/contactsSlice';
+import { deleteContact } from 'redux/contacts/operations';
 import { MdDeleteForever } from 'react-icons/md';
-import { useGetContactsQuery } from 'services/contactsApi';
 
 import {
   ListItem,
@@ -11,9 +10,6 @@ import {
 } from 'components/ContactListItem/ContactListItem.styled';
 
 export const ContactListItem = ({ id, name, number }) => {
-  const { data, error, isLoading } = useGetContactsQuery();
-  console.log(data);
-
   const dispatch = useDispatch();
   return (
     <ListItem key={id}>

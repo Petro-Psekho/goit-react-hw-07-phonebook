@@ -2,8 +2,9 @@ import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-hot-toast';
-import { addContact } from 'redux/contactsSlice';
-import { getContactsItems } from 'redux/contactsSlice';
+
+import { selectContactsItems } from 'redux/contacts/selectors';
+import { saveContact } from 'redux/contacts/operations';
 
 import {
   ErrMessage,
@@ -15,7 +16,7 @@ import {
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
-  const contactsItems = useSelector(getContactsItems);
+  const contactsItems = useSelector(selectContactsItems);
   const {
     register,
     handleSubmit,
@@ -41,7 +42,7 @@ export const ContactForm = () => {
     );
     if (currentName) return toast.error(`${data.name} is already in contacts`);
 
-    dispatch(addContact(data));
+    dispatch(saveContact(data));
     toast.success(`${data.name} added to your phonebook`);
   };
 
