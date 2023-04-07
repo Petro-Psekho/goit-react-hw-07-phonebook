@@ -17,7 +17,7 @@ import {
   Container,
   Title,
   ContactsTitle,
-  FindContactsTitle,
+  // FindContactsTitle,
   TitleWrap,
 } from 'components/App.styled';
 
