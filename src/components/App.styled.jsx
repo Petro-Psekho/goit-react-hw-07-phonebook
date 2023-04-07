@@ -1,4 +1,13 @@
 import styled from '@emotion/styled';
+import { keyframes } from '@emotion/react';
+
+import { tada } from 'react-animations';
+
+const tadaAnimation = keyframes`${tada}`;
+
+export const TadaDiv = styled.div`
+  animation: 1s ${tadaAnimation};
+`;
 
 export const Container = styled.div`
   display: flex;

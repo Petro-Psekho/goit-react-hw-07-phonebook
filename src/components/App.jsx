@@ -16,6 +16,7 @@ import {
   Title,
   ContactsTitle,
   FindContactsTitle,
+  TadaDiv,
 } from 'components/App.styled';
 
 export default function App() {
@@ -45,7 +46,9 @@ export default function App() {
 
       <div>
         <Title>Phonebook</Title>
-        <ContactForm />
+        <TadaDiv>
+          <ContactForm />
+        </TadaDiv>
 
         <ContactsTitle>Contacts</ContactsTitle>
         <FindContactsTitle>Find contacts by name</FindContactsTitle>
