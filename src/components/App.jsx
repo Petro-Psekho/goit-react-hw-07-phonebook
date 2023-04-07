@@ -1,15 +1,10 @@
 import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { Toaster, toast } from 'react-hot-toast';
 
-import {
-  selectContactsItems,
-  selectIsLoading,
-  selectError,
-} from 'redux/contacts/selectors';
-
 import { fetchContacts } from 'redux/contacts/operations';
+import { useContacts, useLoading, useError } from 'hooks';
 
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
@@ -24,9 +19,9 @@ import {
 } from 'components/App.styled';
 
 export default function App() {
-  const contactsItems = useSelector(selectContactsItems);
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
+  const contactsItems = useContacts();
+  const isLoading = useLoading();
+  const error = useError();
 
   const dispatch = useDispatch();
 

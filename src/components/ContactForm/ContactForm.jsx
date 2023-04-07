@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { toast } from 'react-hot-toast';
+import { useContacts } from 'hooks';
 
-import { selectContactsItems } from 'redux/contacts/selectors';
 import { saveContact } from 'redux/contacts/operations';
 
 import {
@@ -16,7 +16,7 @@ import {
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
-  const contactsItems = useSelector(selectContactsItems);
+  const contactsItems = useContacts();
   const {
     register,
     handleSubmit,
