@@ -16,8 +16,9 @@ import {
   Title,
   ContactsTitle,
   FindContactsTitle,
-  TadaDiv,
 } from 'components/App.styled';
+
+import { AnimationTada } from 'components/Animation/Animation.styled';
 
 export default function App() {
   const contactsItems = useContacts();
@@ -46,9 +47,9 @@ export default function App() {
 
       <div>
         <Title>Phonebook</Title>
-        <TadaDiv>
+        <AnimationTada>
           <ContactForm />
-        </TadaDiv>
+        </AnimationTada>
 
         <ContactsTitle>Contacts</ContactsTitle>
         <FindContactsTitle>Find contacts by name</FindContactsTitle>

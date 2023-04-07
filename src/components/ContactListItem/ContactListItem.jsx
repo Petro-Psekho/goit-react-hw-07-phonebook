@@ -9,6 +9,7 @@ import {
   DeleteContactItem,
   ContactItem,
 } from 'components/ContactListItem/ContactListItem.styled';
+import { AnimationPulse } from 'components/Animation/Animation.styled';
 
 export const ContactListItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
@@ -19,15 +20,17 @@ export const ContactListItem = ({ id, name, number }) => {
   };
 
   return (
-    <ListItem key={id}>
-      <ContactItem>
-        {name}: {number}
-      </ContactItem>
+    <AnimationPulse>
+      <ListItem key={id}>
+        <ContactItem>
+          {name}: {number}
+        </ContactItem>
 
-      <DeleteContactItem onClick={() => removeContact(id)}>
-        <MdDeleteForever size={20} color={'lightCoral'} />
-      </DeleteContactItem>
-    </ListItem>
+        <DeleteContactItem onClick={() => removeContact(id)}>
+          <MdDeleteForever size={20} color={'lightCoral'} />
+        </DeleteContactItem>
+      </ListItem>
+    </AnimationPulse>
   );
 };
 
