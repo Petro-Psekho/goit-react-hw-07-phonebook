@@ -20,13 +20,15 @@ export const TitleWrap = styled.div`
 
 export const Title = styled.h1`
   font-size: 30px;
-  color: #0d85fe;
+  color: #396fa5;
   margin-left: 12px;
 `;
 
 export const ContactsTitle = styled.h2`
-  font-size: 30px;
-  color: #4e4e4e;
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 26px;
+  color: #396fa5;
 `;
 
 export const FindContactsTitle = styled.h3`

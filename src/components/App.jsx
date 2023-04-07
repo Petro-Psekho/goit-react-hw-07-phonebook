@@ -50,7 +50,7 @@ export default function App() {
 
       <div>
         <TitleWrap>
-          <FaAddressCard size={32} color={'#0d85fe'} />
+          <FaAddressCard size={32} color={'#396fa5'} />
           <Title>Phonebook</Title>
         </TitleWrap>
 
@@ -59,7 +59,7 @@ export default function App() {
         </AnimationTada>
 
         <ContactsTitle>Contacts</ContactsTitle>
-        <FindContactsTitle>Find contacts by name</FindContactsTitle>
+        {/* <FindContactsTitle>Find contacts by name</FindContactsTitle> */}
         <Filter />
         {contactsItems.length ? <ContactList /> : <p>No any contacts</p>}
       </div>

@@ -6,12 +6,12 @@ export const ListItem = styled.li`
   justify-content: space-between;
 
   padding: 6px 16px;
-  border: 1px solid #dfdddd;
+  border: 1px solid #e7e7e7;
   border-radius: 4px;
 
   margin-bottom: 4px;
 
-  color: #efefef;
+  color: #e7e7e7;
   background-color: #fff;
 
   /* :nth-of-type(2n) {
