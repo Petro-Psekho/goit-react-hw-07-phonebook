@@ -4,6 +4,9 @@ import { useDispatch } from 'react-redux';
 import { toast } from 'react-hot-toast';
 import { useContacts } from 'hooks';
 
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { saveContact } from 'redux/contacts/operations';
 
 import {
@@ -11,7 +14,7 @@ import {
   FormWrap,
   FormInput,
   InputName,
-  SubmitBtn,
+  // SubmitBtn,
 } from 'components/ContactForm/ContactForm.styled';
 
 export const ContactForm = () => {
@@ -83,7 +86,11 @@ export const ContactForm = () => {
 
       {errors.exampleRequired && <p>This field is required</p>}
 
-      <SubmitBtn type="submit">Add Contact</SubmitBtn>
+      <Button type="submit" variant="outline-primary">
+        Add Contact
+      </Button>
+
+      {/* <SubmitBtn type="submit">Add Contact</SubmitBtn> */}
     </FormWrap>
   );
 };
