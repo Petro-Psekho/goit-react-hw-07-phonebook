@@ -14,7 +14,7 @@ import {
   FormWrap,
   FormInput,
   InputName,
-  // SubmitBtn,
+  SubmitBtn,
 } from 'components/ContactForm/ContactForm.styled';
 
 export const ContactForm = () => {
@@ -86,9 +86,11 @@ export const ContactForm = () => {
 
       {errors.exampleRequired && <p>This field is required</p>}
 
-      <Button type="submit" variant="outline-primary">
-        Add Contact
-      </Button>
+      <SubmitBtn>
+        <Button type="submit" variant="outline-primary">
+          Add Contact
+        </Button>
+      </SubmitBtn>
 
       {/* <SubmitBtn type="submit">Add Contact</SubmitBtn> */}
     </FormWrap>

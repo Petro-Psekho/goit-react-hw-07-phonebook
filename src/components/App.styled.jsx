@@ -10,10 +10,18 @@ export const Container = styled.div`
   color: #4e4e4e;
 `;
 
-export const Title = styled.h1`
+export const TitleWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   margin-bottom: 20px;
+`;
+
+export const Title = styled.h1`
   font-size: 30px;
-  color: #4e4e4e;
+  color: #0d85fe;
+  margin-left: 12px;
 `;
 
 export const ContactsTitle = styled.h2`

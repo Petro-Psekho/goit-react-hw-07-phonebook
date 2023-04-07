@@ -6,6 +6,8 @@ import { Toaster, toast } from 'react-hot-toast';
 import { fetchContacts } from 'redux/contacts/operations';
 import { useContacts, useLoading, useError } from 'hooks';
 
+import { FaAddressCard } from 'react-icons/fa';
+
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
@@ -16,6 +18,7 @@ import {
   Title,
   ContactsTitle,
   FindContactsTitle,
+  TitleWrap,
 } from 'components/App.styled';
 
 import { AnimationTada } from 'components/Animation/Animation.styled';
@@ -46,7 +49,11 @@ export default function App() {
       {isLoading && <Spinner />}
 
       <div>
-        <Title>Phonebook</Title>
+        <TitleWrap>
+          <FaAddressCard size={32} color={'#0d85fe'} />
+          <Title>Phonebook</Title>
+        </TitleWrap>
+
         <AnimationTada>
           <ContactForm />
         </AnimationTada>
