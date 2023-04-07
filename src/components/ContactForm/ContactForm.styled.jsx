@@ -32,8 +32,16 @@ export const InputName = styled.label`
 export const SubmitBtn = styled.button`
   width: 100%;
   margin-top: 20px;
+  padding: 8px;
+
+  color: #fff;
+  background-color: #3c95fc;
+  border: none;
+  border-radius: 4px;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
 
   cursor: pointer;
 
-  font-size: 26px;
+  font-size: 18px;
 `;
