@@ -14,6 +14,7 @@ import { fetchContacts } from 'redux/contacts/operations';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
+import { Spinner } from 'components/Spinner/Spinner';
 
 import {
   Container,
@@ -35,7 +36,7 @@ export default function App() {
 
   useEffect(() => {
     if (error === 'ERR_BAD_REQUEST') {
-      toast.error('There are some problems! Try again later.');
+      toast.error('Something went wrong, try again later');
       return;
     }
     if (error) {
@@ -45,6 +46,8 @@ export default function App() {
 
   return (
     <Container>
+      {isLoading && <Spinner />}
+
       <div>
         <Title>Phonebook</Title>
         <ContactForm />
